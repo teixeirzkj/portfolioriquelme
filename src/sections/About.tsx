@@ -14,33 +14,35 @@ export function About() {
       </p>
 
       <Container className="relative grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <Reveal className="relative mx-auto w-full max-w-[19rem] sm:max-w-sm lg:sticky lg:block lg:top-28 lg:max-w-none lg:self-start">
+        <Reveal className="pointer-events-none absolute top-0 -right-[3%] z-0 w-[44%] max-w-[16rem] sm:right-4 sm:w-[36%] lg:pointer-events-auto lg:sticky lg:top-28 lg:right-auto lg:z-auto lg:w-full lg:max-w-none lg:self-start">
           <ProfilePhoto variant="about" className="relative aspect-[3/4] w-full" />
           <div
             aria-hidden="true"
-            className="absolute -bottom-4 -left-4 -z-10 size-24 rounded-2xl border border-brand/40 bg-brand/5"
+            className="absolute -bottom-4 -left-4 -z-10 hidden size-24 rounded-2xl border border-brand/40 bg-brand/5 lg:block"
           />
-          <div aria-hidden="true" className="absolute -top-4 -right-4 -z-10 size-16 rounded-full border border-line-2" />
+          <div aria-hidden="true" className="absolute -top-4 -right-4 -z-10 hidden size-16 rounded-full border border-line-2 lg:block" />
         </Reveal>
 
-        <div>
-          <SectionHeading id="sobre-title" eyebrow="Quem sou" title="Sobre" highlight="Mim." />
+        <div className="relative z-10">
+          <div className="pr-[44%] sm:pr-[38%] lg:pr-0">
+            <SectionHeading id="sobre-title" eyebrow="Quem sou" title="Sobre" highlight="Mim." />
+          </div>
 
           <div className="mt-8 space-y-5 text-base leading-relaxed text-muted sm:text-lg">
             {aboutParagraphs.map((paragraph, i) => (
               <Reveal key={i} delay={0.05 * i}>
-                <p>{paragraph}</p>
+                <p className={i === 0 ? "pr-[44%] sm:pr-[38%] lg:pr-0" : undefined}>{paragraph}</p>
               </Reveal>
             ))}
           </div>
 
-          <ul className="mt-12 grid gap-4 sm:grid-cols-2">
+          <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-4">
             {aboutCards.map((card, i) => (
               <Reveal as="li" key={card.title} delay={0.08 * i} className="h-full">
-                  <GlowCard className="p-6">
+                  <GlowCard className="p-4 sm:p-6">
                     <IconTile icon={card.icon} />
-                    <h3 className="mt-5 text-lg font-semibold">{card.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">{card.description}</p>
+                    <h3 className="mt-4 text-base font-semibold sm:mt-5 sm:text-lg">{card.title}</h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-muted sm:mt-2 sm:text-sm">{card.description}</p>
                   </GlowCard>
                 </Reveal>
             ))}

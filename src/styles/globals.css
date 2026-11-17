@@ -48,6 +48,15 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  /* No celular, todo o site (textos, espaçamentos e componentes em rem)
+     fica proporcionalmente menor. */
+  @media (max-width: 639px) {
+    html { font-size: 87.5%; }
+  }
+  @media (max-width: 359px) {
+    html { font-size: 81.25%; }
+  }
+
   body {
     @apply bg-bg font-sans text-fg antialiased;
     overflow-x: hidden;

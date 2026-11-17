@@ -15,13 +15,13 @@ export function Interests() {
           title="Além do"
           highlight="Código."
         />
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
           {interests.map((item, i) => (
             <Reveal as="li" key={item.title} delay={0.06 * i} className="h-full">
-                <GlowCard className="p-6">
+                <GlowCard className="p-4 sm:p-6">
                   <IconTile icon={item.icon} />
-                  <h3 className="mt-5 font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
+                  <h3 className="mt-4 text-sm font-semibold sm:mt-5 sm:text-base">{item.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-muted sm:mt-2 sm:text-sm">{item.description}</p>
                 </GlowCard>
               </Reveal>
           ))}
