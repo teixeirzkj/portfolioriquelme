@@ -19,7 +19,11 @@ export function ProfilePhoto({ variant, className, priority = false }: ProfilePh
     return (
       <div className={cn('relative isolate', className)}>
         {/* Brilho e detalhes geométricos atrás do recorte */}
-        <div aria-hidden="true" className="absolute inset-x-[8%] top-[12%] bottom-[18%] -z-10 rounded-full bg-brand/30 blur-[90px]" />
+        {/* Gradiente radial em vez de blur: o blur era recortado no retângulo da camada animada */}
+        <div
+          aria-hidden="true"
+          className="absolute -inset-x-[20%] -top-[5%] bottom-[5%] -z-10 bg-[radial-gradient(closest-side,rgb(0_102_255/0.32),rgb(0_102_255/0.12)_55%,transparent)]"
+        />
         <div
           aria-hidden="true"
           className="absolute top-[6%] left-1/2 -z-10 aspect-square w-[88%] -translate-x-1/2 rounded-full border border-line-2/70"
@@ -36,7 +40,7 @@ export function ProfilePhoto({ variant, className, priority = false }: ProfilePh
           loading={priority ? 'eager' : 'lazy'}
           fetchPriority={priority ? 'high' : 'auto'}
           decoding="async"
-          className="h-full w-full object-contain object-bottom drop-shadow-[0_0_40px_rgb(0_102_255/0.25)] [mask-image:linear-gradient(to_bottom,black_72%,transparent_98%)]"
+          className="h-full w-full object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_72%,transparent_98%)]"
         />
       </div>
     )
