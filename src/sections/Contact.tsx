@@ -35,8 +35,9 @@ export function Contact() {
 
     setStatus('sending')
     try {
-      if (!profile.contact.email) throw new Error('E-mail de destino não configurado em profile.ts')
-      await sendContactMessage(profile.contact.email, {
+      const destination = profile.contactFormId ?? profile.contact.email
+      if (!destination) throw new Error('Destino do formulário não configurado em profile.ts')
+      await sendContactMessage(destination, {
         name: data.name.trim(),
         email: data.email.trim(),
         message: data.message.trim(),

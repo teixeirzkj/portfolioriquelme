@@ -30,6 +30,8 @@ export interface Profile {
     /** Somente dígitos com DDI e DDD, ex.: 5574999999999 */
     whatsapp?: string
   }
+  /** Código do FormSubmit (vem no e-mail de ativação); substitui o e-mail no envio do formulário */
+  contactFormId?: string
 }
 
 export interface FeatureCard {

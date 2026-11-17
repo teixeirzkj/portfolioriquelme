@@ -12,6 +12,7 @@ export interface ContactMessage {
   message: string
 }
 
+/** to: código do FormSubmit (recomendado) ou o e-mail de destino. */
 export async function sendContactMessage(to: string, data: ContactMessage): Promise<void> {
   const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(to)}`, {
     method: 'POST',
