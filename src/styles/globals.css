@@ -1,0 +1,130 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   Tokens de design — altere aqui para mudar a identidade do site todo
+   ------------------------------------------------------------------ */
+@theme {
+  --color-bg: #050507;
+  --color-bg-2: #0b0d12;
+  --color-card: #10131b;
+  --color-card-2: #141823;
+  --color-line: #1e2430;
+  --color-line-2: #2a3242;
+  --color-brand: #0066ff;
+  --color-brand-2: #1479ff;
+  --color-fg: #ffffff;
+  --color-muted: #a1a1aa;
+  --color-subtle: #71717a;
+
+  --font-display: 'Space Grotesk Variable', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-glow: 0 0 0 1px rgb(0 102 255 / 0.35), 0 10px 40px -10px rgb(0 102 255 / 0.45);
+  --shadow-glow-sm: 0 0 24px -6px rgb(0 102 255 / 0.55);
+
+  --animate-scroll-dot: scroll-dot 1.8s ease-in-out infinite;
+  --animate-float: float 8s ease-in-out infinite;
+
+  @keyframes scroll-dot {
+    0% { transform: translateY(0); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translateY(14px); opacity: 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+@keyframes case-in {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg font-sans text-fg antialiased;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(0 102 255 / 0.4);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-2);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  dialog::backdrop {
+    background: rgb(5 5 7 / 0.8);
+    backdrop-filter: blur(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Fundo quadriculado sutil usado em várias seções */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(30 36 48 / 0.45) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(30 36 48 / 0.45) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  /* Palavras gigantes decorativas no fundo */
+  .bg-word {
+    @apply pointer-events-none select-none font-display font-bold leading-none tracking-tighter;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255 255 255 / 0.06);
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(100deg, #1479ff 0%, #0066ff 45%, #6aa8ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-display text-xs font-semibold tracking-[0.25em] text-brand-2 uppercase;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
