@@ -31,6 +31,8 @@ export function Hero() {
         <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
         <div className="absolute top-0 left-1/2 size-[60rem] -translate-x-1/2 bg-[radial-gradient(closest-side,rgb(0_102_255/0.16),transparent)]" />
         <div className="absolute -right-48 -bottom-48 size-[40rem] bg-[radial-gradient(closest-side,rgb(20_121_255/0.1),transparent)]" />
+        {/* Esmaece a base do hero no preto, para o brilho não terminar numa linha reta na divisa com a próxima seção */}
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-bg sm:h-64" />
       </div>
       <m.p
         aria-hidden="true"
