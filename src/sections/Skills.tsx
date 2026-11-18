@@ -8,7 +8,7 @@ import { skillGroups } from '@/data/skills'
 export function Skills() {
   return (
     <section id="tecnologias" aria-labelledby="tecnologias-title" className="relative overflow-hidden py-24 sm:py-32">
-      <div aria-hidden="true" className="absolute top-1/3 -left-40 size-96 rounded-full bg-brand/10 blur-[110px]" />
+      <div aria-hidden="true" className="absolute top-1/4 -left-64 size-[40rem] bg-[radial-gradient(closest-side,rgb(0_102_255/0.12),transparent)]" />
       <Container className="relative">
         <SectionHeading
           id="tecnologias-title"

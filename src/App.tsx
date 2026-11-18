@@ -1,4 +1,4 @@
-import { MotionConfig } from 'motion/react'
+import { LazyMotion, MotionConfig, domAnimation } from 'motion/react'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { ScrollProgress } from '@/components/ScrollProgress'
@@ -12,6 +12,7 @@ import { Skills } from '@/sections/Skills'
 
 export default function App() {
   return (
+    <LazyMotion features={domAnimation} strict>
     <MotionConfig reducedMotion="user">
       <ScrollProgress />
       <Header />
@@ -26,5 +27,6 @@ export default function App() {
       </main>
       <Footer />
     </MotionConfig>
+    </LazyMotion>
   )
 }

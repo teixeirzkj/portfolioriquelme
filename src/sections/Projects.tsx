@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, m } from 'motion/react'
 import { Plus, Users } from 'lucide-react'
 import { lazy, Suspense, useState, type KeyboardEvent } from 'react'
 import { Badge } from '@/components/Badge'
@@ -70,7 +70,6 @@ function ProjectAccordion({ items, onOpenCaseStudy }: ListProps) {
             >
               <ProjectVisual
                 project={project}
-                eager={index === 0}
                 fill
                 imgClassName={cn(
                   'transition-all duration-700',
@@ -131,7 +130,7 @@ function ProjectAccordion({ items, onOpenCaseStudy }: ListProps) {
               {/* Conteúdo do card expandido */}
               <AnimatePresence>
                 {isActive && (
-                  <motion.div
+                  <m.div
                     id={`project-panel-${project.id}`}
                     key={project.id}
                     initial={{ opacity: 0, y: 24 }}
@@ -157,7 +156,7 @@ function ProjectAccordion({ items, onOpenCaseStudy }: ListProps) {
                     <div className="mt-7">
                       <ProjectLinks project={project} onOpenCaseStudy={onOpenCaseStudy} />
                     </div>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
             </div>

@@ -40,7 +40,7 @@ export function ProjectVisual({ project, className, imgClassName, eager = false,
       aria-label={`Composição visual do projeto ${project.title}`}
     >
       <div aria-hidden="true" className="bg-grid absolute inset-0 opacity-60" />
-      <div aria-hidden="true" className="absolute size-64 rounded-full bg-brand/20 blur-3xl" />
+      <div aria-hidden="true" className="absolute size-80 bg-[radial-gradient(closest-side,rgb(0_102_255/0.22),transparent)]" />
       <div aria-hidden="true" className="absolute size-56 rounded-full border border-line" />
       <div aria-hidden="true" className="absolute size-40 rounded-full border border-dashed border-line-2" />
       <span className="relative inline-flex size-20 items-center justify-center rounded-2xl border border-brand/40 bg-card text-brand-2 shadow-glow">

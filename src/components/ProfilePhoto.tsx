@@ -33,7 +33,9 @@ export function ProfilePhoto({ variant, className, priority = false }: ProfilePh
           className="absolute top-[14%] left-1/2 -z-10 aspect-square w-[70%] -translate-x-1/2 rounded-full border border-dashed border-brand/25"
         />
         <img
-          src={src}
+          src={`${src}-600.webp`}
+          srcSet={`${src}-400.webp 400w, ${src}-600.webp 600w, ${src}-900.webp 900w`}
+          sizes="(min-width: 1024px) 40vw, (min-width: 640px) 38vw, 46vw"
           alt={profile.photoAlt ?? profile.name}
           width={900}
           height={1200}

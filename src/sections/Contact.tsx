@@ -52,7 +52,7 @@ export function Contact() {
 
   return (
     <section id="contato" aria-labelledby="contato-title" className="relative overflow-hidden py-24 sm:py-32">
-      <div aria-hidden="true" className="absolute right-0 bottom-0 size-[30rem] rounded-full bg-brand/10 blur-[120px]" />
+      <div aria-hidden="true" className="absolute -right-40 -bottom-40 size-[44rem] bg-[radial-gradient(closest-side,rgb(0_102_255/0.12),transparent)]" />
       <Container className="relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div>
           <SectionHeading

@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-line/70 bg-bg">
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 -bottom-24 flex justify-center">
-        <div className="h-48 w-[48rem] max-w-full rounded-full bg-brand/10 blur-3xl" />
+        <div className="h-64 w-[56rem] max-w-full bg-[radial-gradient(closest-side,rgb(0_102_255/0.12),transparent)]" />
       </div>
 
       <Container className="relative py-14">

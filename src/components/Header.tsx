@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, m } from 'motion/react'
 import { FileText, Menu, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Logo } from './Logo'
@@ -68,19 +68,12 @@ export function Header() {
               const isActive = active === item.id
               return (
                 <li key={item.id} className="relative">
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-active"
-                      className="absolute inset-0 rounded-full bg-brand/15 ring-1 ring-brand/50"
-                      transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                    />
-                  )}
                   <a
                     href={`#${item.id}`}
                     aria-current={isActive ? 'true' : undefined}
                     className={cn(
                       'relative block rounded-full px-4 py-2 font-display text-[0.8rem] font-medium tracking-wide uppercase transition-colors duration-300',
-                      isActive ? 'text-fg' : 'text-muted hover:text-fg',
+                      isActive ? 'bg-brand/15 text-fg ring-1 ring-brand/50' : 'text-muted hover:text-fg',
                     )}
                   >
                     {item.label}
@@ -120,7 +113,7 @@ export function Header() {
 
       <AnimatePresence>
         {open && (
-          <motion.nav
+          <m.nav
             id="menu-mobile"
             aria-label="Navegação principal"
             initial={{ opacity: 0, height: 0 }}
@@ -131,7 +124,7 @@ export function Header() {
           >
             <ul className="flex flex-col gap-1 px-4 pt-6 sm:px-6">
               {navItems.map((item, index) => (
-                <motion.li
+                <m.li
                   key={item.id}
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -150,7 +143,7 @@ export function Header() {
                     {item.label}
                     <span className="font-sans text-xs font-medium text-brand-2">0{index + 1}</span>
                   </a>
-                </motion.li>
+                </m.li>
               ))}
             </ul>
             {profile.resumeUrl && (
@@ -160,7 +153,7 @@ export function Header() {
                 </ButtonLink>
               </div>
             )}
-          </motion.nav>
+          </m.nav>
         )}
       </AnimatePresence>
     </header>

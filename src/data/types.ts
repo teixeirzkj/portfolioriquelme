@@ -12,7 +12,7 @@ export interface Profile {
   role: string
   tagline: string
   areas: string[]
-  /** Fotos profissionais (imports de src/assets/profile). Ausentes = composição provisória. */
+  /** Base do caminho das fotos em /public/images (sem -400/-600/-900.webp). Ausentes = composição provisória. */
   photos: {
     hero?: string
     about?: string

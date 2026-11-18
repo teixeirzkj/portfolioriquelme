@@ -14,6 +14,18 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    <!-- Recursos críticos: começam a baixar junto com o HTML, sem esperar o JavaScript -->
+    <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/riquelme-hero-600.webp"
+      imagesrcset="/images/riquelme-hero-400.webp 400w, /images/riquelme-hero-600.webp 600w, /images/riquelme-hero-900.webp 900w"
+      imagesizes="(min-width: 1024px) 40vw, (min-width: 640px) 38vw, 46vw"
+      fetchpriority="high"
+    />
+
     <!-- Open Graph / redes sociais. Se mudar o domínio, atualize as URLs abaixo. -->
     <link rel="canonical" href="https://riquelmeportfolio.vercel.app/" />
     <meta property="og:url" content="https://riquelmeportfolio.vercel.app/" />
